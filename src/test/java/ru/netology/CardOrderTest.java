@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class CardOrderTest{
     @Test
-    void shouldSubmitRequest() {
+    void shouldSuccessfulSending() {
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("Иванов Иван");
@@ -20,7 +20,7 @@ public class CardOrderTest{
     }
 
     @Test
-    void shouldSendRequestInvalidName() {
+    void shouldInvalidName() {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
@@ -32,7 +32,7 @@ public class CardOrderTest{
     }
 
     @Test
-    void shouldSendRequestInvalidPhoneNumber() {
+    void shouldInvalidPhoneNumber() {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
@@ -44,7 +44,7 @@ public class CardOrderTest{
     }
 
     @Test
-    void shouldSendRequestWithoutPhoneNumber() {
+    void shouldBlankPhoneNumberField() {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
@@ -56,7 +56,7 @@ public class CardOrderTest{
     }
 
     @Test
-    void shouldSendRequestWithoutName() {
+    void shouldBlankNameField() {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
@@ -68,7 +68,7 @@ public class CardOrderTest{
     }
 
     @Test
-    void shouldSendRequestWithoutCheckbox() {
+    void shouldCheckbox() {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
